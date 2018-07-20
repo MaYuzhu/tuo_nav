@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>html5和css3特效导航</title>
+
+<style type="text/css">
+
+*{margin:0px;padding:0px;}
+
+nav{
+	width:100%;margin:10px auto;
+	background:-webkit-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+	background:-moz-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+	background:-ms-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+	background:-o-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+	/*设置渐变色，top,从头部开始，第一种颜色，第二种颜色，第三种颜色*/
+	box-shadow:0 0 20px #fff;
+	border-radius:5px;
+}
+nav ul li{list-style:none;width:50px;float:left;border-right:1px solid #000;line-height:46px;text-align:center;}
+nav ul li a{
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#fff;
+	text-decoration:none;
+	}
+nav ul li a img{
+	width: 100%;
+	height: 100%;
+	}
+nav ul li:hover{background:rgba(10,5,5,0.7);}
+
+.first{border-radius:5px 0 0 5px;}
+.last{border-radius:0 5px 5px 0;}
+
+nav .hid li{border:none;background:rgba(10,5,5,0.4);}
+nav .hid li:hover{background:rgba(10,5,5,0.6);}
+
+nav .hid1{height:0px;overflow:hidden;transition:.5s;} /*把高度设置为0，hover后改变高度，并且设置出来后的速度 */
+nav ul li:hover .hid1{height:138px;}
+
+nav .hid2{display:none;}
+nav ul li:hover .hid2{display:block;-webkit-animation:aa 1s;-moz-animation:aa 1s;} /*调用动画函数，并且1S执行 */
+
+@-webkit-keyframes aa{ /*写一个动画函数*/
+	from{-webkit-transform:rotateY(0deg);}
+	to{-webkit-transform:rotateY(360deg);}
+}
+@-moz-keyframes aa{  /*写一个动画函数*/
+	from{-moz-transform:rotateY(0deg);}
+	to{-moz-transform:rotateY(360deg);}
+}
+</style>
+
+</head>
+<!--<body style="background-color:#181e2a;">-->
+<body>
+<nav style="background-color:#535a7d;">
+<ul style="overflow:hidden;">
+	<li class="first">
+		<a href="#"><img src="./icon_ivp17jbydq/logistic.png" alt=""></a>
+		<ul class="hid hid1"> 
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">JavaScript</a></li>
+			<li><a href="#">CSS3</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a>
+		<ul class="hid hid1"> 
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">JavaScript</a></li>
+			<li><a href="#">CSS3</a></li>
+		</ul>
+	</li>
+	<li><a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a></li>
+	<li>
+		<a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a>
+		<ul class="hid hid2"> 
+			<li><a href="#">C++</a></li>
+			<li><a href="#">JAVA</a></li>
+			<li><a href="#">PHP</a></li>
+		</ul>
+	</li>
+	<li><a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a></li>
+	<li>
+		<a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a>
+		<ul class="hid hid2"> 
+			<li><a href="#">C++</a></li>
+			<li><a href="#">JAVA</a></li>
+			<li><a href="#">PHP</a></li>
+		</ul>
+	</li>
+	<li class="last"style="border:none;"><a href="#"><img src="./icon_ivp17jbydq/logisticsSystem.png" alt=""></a></li>
+</ul>
+</nav>
+
+</body>
+</html>
