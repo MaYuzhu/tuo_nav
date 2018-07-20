@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style:none
+        }
+        .wrap{
+            width: 100%;
+            height: 100px;
+            background: black;
+        }
+        nav{
+            width: 90%;
+            transform: translate(0,10px);
+            margin: 0px auto;
+            padding: 0 10px;
+            background:-webkit-linear-gradient(top, rgba(138, 138, 138, 0.8) 0%, rgba(198, 198, 198, 0.8) 50%, rgba(99, 99, 99, 0.9) 51%);
+            /*background:-moz-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+            background:-ms-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%);
+            background:-o-linear-gradient(top,rgba(40,40,40,0.8) 0%,rgba(55,55,55,0.8) 50%,rgba(23,23,23,0.9) 51%)*/;
+            /*设置渐变色，top,从头部开始，第一种颜色，第二种颜色，第三种颜色*/
+            box-shadow:0 0 20px #fff;
+            border-radius:5px;
+        }
+        nav>ul{
+            display: flex;
+        }
+
+        nav>ul>li{
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+
+        }
+        nav>ul>li>img{
+            width: 100%;
+        }
+        nav>ul>li>.hid{
+            width: 100px;
+            background: rgba(123, 117, 124, 0.81);
+            display: none;
+        }
+        nav>ul>li:hover .hid{
+            display: block;
+            -webkit-animation:aa 1s;-moz-animation:aa 1s;
+        }
+
+        @-webkit-keyframes aa{ /*写一个动画函数*/
+            from{-webkit-transform:rotateY(0deg);}
+            to{-webkit-transform:rotateY(360deg);}
+        }
+        @-moz-keyframes aa{  /*写一个动画函数*/
+            from{-moz-transform:rotateY(0deg);}
+            to{-moz-transform:rotateY(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <nav>
+            <ul>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <img src="./left/logistic.png" alt="">
+                    <ul class="hid">
+                        <li><a href="#">C++</a></li>
+                        <li><a href="#">JAVA</a></li>
+                        <li><a href="#">PHP</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
