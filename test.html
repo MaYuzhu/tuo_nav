@@ -14,7 +14,7 @@
         .wrap{
             width: 100%;
             height: 100px;
-            background: #2a19c9;
+            background: #666;
         }
         nav{
             width: 90%;
@@ -29,7 +29,9 @@
             box-shadow:0 0 20px #fff;
             border-radius:5px;
             /*background: rgba(244,244,244,0.1);*/
-            background: rgba(2,2,2,0.1);
+            background: rgba(250,250,250,0.1);
+            display: flex;
+            justify-content: space-between;
         }
         nav>ul{
             display: flex;
@@ -39,7 +41,6 @@
             width: 20px;
             height: 20px;
             padding: 2px;
-
         }
         nav>ul>li>img{
             width: 100%;
@@ -117,7 +118,30 @@
                     </ul>
                 </li>
             </ul>
+            <ul>
+                <li><img src="./right/icon_ogf6gzc0ddn/窗体-最小化.png" alt=""></li>
+                <li><img src="./right/icon_ogf6gzc0ddn/全屏.png" alt=""></li>
+                <li><img src="./right/icon_ogf6gzc0ddn/窗体-关闭.png" alt=""></li>
+            </ul>
         </nav>
     </div>
 </body>
+<script>
+    /*
+ * 将一个数组分成几个同等长度的数组
+ * array[分割的原数组]
+ * size[每个子数组的长度]
+    */
+    var a = sliceArray([0,1,2,3,4,5,6,7],4)
+    console.log(a)
+    function sliceArray(array, size) {
+        var result = [];
+        for (var x = 0; x < Math.ceil(array.length / size); x++) {
+            var start = x * size;
+            var end = start + size;
+            result.push(array.slice(start, end));
+        }
+        return result;
+    }
+</script>
 </html>
