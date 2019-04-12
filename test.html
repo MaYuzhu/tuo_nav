@@ -14,7 +14,7 @@
         .wrap{
             width: 100%;
             height: 100px;
-            background: #666;
+            background: #999;
         }
         nav{
             width: 90%;
@@ -62,6 +62,9 @@
         @-moz-keyframes aa{  /*写一个动画函数*/
             from{-moz-transform:rotateY(0deg);}
             to{-moz-transform:rotateY(360deg);}
+        }
+        a{
+            text-decoration : none;
         }
     </style>
 </head>
@@ -125,7 +128,43 @@
             </ul>
         </nav>
     </div>
+    <div class="images_wrap">
+        <p>图片上传预览</p>
+        <form action="javascript:;" name="editForm"  method="post" enctype="multipart/form-data">
+            <a href="javascript:void(0)" class="newspic">
+                <img style="width:200px;height:100px;"  src="./images/1.jpg"/>
+            </a>
+            <input type="file" id="logoUrl" name="logoUrl" onchange="showPic(this)"  style="display: none"/>
+            <button  type="submit" >提交</button>
+        </form>
+
+
+    </div>
 </body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    //上传-预览逻辑
+    $(".newspic").click(function() {    //1.点击默认图片，出发标签<a>的click事件
+        $(this).next('input').click();//2.触发input的点击事件，用户选择图片进行上传
+    });
+    function showPic(data) {//3.当用户上传图片后，触发input标签的onchange事件，执行showPic()方法
+
+        if (data.files && data.files[0]) {//4.判断input标签的file是否存在
+
+            var reader = new FileReader();//5.实例化一个FileReader()接口
+            reader.readAsDataURL(data.files[0]);//6.通过readAsDataURL()方法读取文件，将图片内嵌在网页之中
+            reader.onload = function(evt) {//7.调用FileReader()的onload事件，当文件读取成功时，执行8
+                //8.将reader的result属性值赋值给data.parentNode.childNodes[1].childNodes[1].src，实现图片预览
+
+                data.parentNode.childNodes[1].childNodes[1].src = evt.target.result;
+                console.log(data.parentNode.childNodes[1].childNodes[1])
+            }
+        }
+    }
+
+    //上传-提交保存逻辑
+    //用户选择图片,点击提交；将数据通过表单(name-value)提交给后台；注意：需要表单enctype="multipart/form-data"；否则后台无法接受
+</script>
 <script>
     /*
  * 将一个数组分成几个同等长度的数组
@@ -144,4 +183,6 @@
         return result;
     }
 </script>
+
+
 </html>
